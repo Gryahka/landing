@@ -10,6 +10,12 @@
       </div>
     </section>
 
+    <section class="mainPage__timeline">
+      <div class="container">
+        <MainTimeline />
+      </div>
+    </section>
+
     <GalleryBold />
 
     <QuestionAnswer />
@@ -25,6 +31,7 @@ import ArtistTeam from '@/components/mainPage/artistTeam/index.vue'
 import GalleryBold from '@/components/mainPage/galleryBold/index.vue'
 import QuestionAnswer from '@/components/mainPage/questionAnswer/index.vue'
 import BuyToken from '@/components/mainPage/buyToken/index.vue'
+import MainTimeline from '@/components/mainPage/mainTimeline/index.vue'
 
 export default {
   name: 'MainPage',
@@ -35,7 +42,8 @@ export default {
     ArtistTeam,
     GalleryBold,
     QuestionAnswer,
-    BuyToken
+    BuyToken,
+    MainTimeline
   }
 }
 </script>

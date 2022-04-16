@@ -7,7 +7,7 @@
 
     <CustomModal v-if="$store.getters['modal/MODAL_NAME']">
       <template slot="modalBody">
-        <ArtistsModal />
+        <ArtistsModal :artist-data="$store.getters['artistsModal/ARTIST_DATA']" />
       </template>
     </CustomModal>
   </div>
@@ -17,19 +17,14 @@
 import AppHeader from '@/components/appHeader/index.vue'
 import AppBanner from '@/components/appBanner/index.vue'
 import MainPage from '@/components/mainPage/index.vue'
-import CustomModal from '@/components/customModal/index.vue'
-import ArtistsModal from '@/components/customModal/modalBodies/artistsModal/index.vue'
+import CustomModal from '@/components/ui/customModal/index.vue'
+import ArtistsModal from '@/components/ui/customModal/modalBodies/artistsModal/index.vue'
 import AppFooter from '~/components/appFooter/index.vue'
 
 export default {
   name: 'IndexPage',
   components: {
     AppBanner, AppHeader, MainPage, CustomModal, ArtistsModal, AppFooter
-  },
-
-  mounted () {
-    // TODO
-    // this.$store.dispatch('modal/modalOpen', 'ArtistsModal')
   }
 }
 </script>

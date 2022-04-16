@@ -119,64 +119,91 @@ export default {
       teamArr: [
         {
           avatar: '/images/avatars/chell.png',
-          name: 'Chell'
-        },
-
-        {
-          avatar: '/images/avatars/nikvsio.png',
-          name: 'NIKVSIO'
-        },
-
-        {
-          avatar: '/images/avatars/hoshiBg.png',
-          name: 'Hoshi'
-        },
-
-        {
-          avatar: '/images/avatars/nikoBg.png',
-          name: 'NICO'
-        },
-
-        {
-          avatar: '/images/avatars/ERMKVbg.png',
-          name: 'ERMKV'
-        },
-
-        {
-          avatar: '/images/avatars/DiMAbg.png',
-          name: 'DiMA'
-        },
-
-        {
-          avatar: '/images/avatars/BTTGbg.png',
-          name: 'IM BTTG'
-        },
-
-        {
-          avatar: '/images/avatars/YarzhombekBg.png',
-          name: 'Tim Yarzhombek'
-        },
-
-        {
-          avatar: '/images/avatars/VladimirBg.png',
-          name: 'Vladimir Ayuev'
-        },
-
-        {
-          avatar: '/images/avatars/thisworldout.png',
-          name: 'thisworldout'
-        },
-
-        {
-          avatar: '/images/avatars/BXBbg.png',
-          name: 'BXB.STD'
+          name: 'Chell',
+          preview: 'Hi, my name is Lisa, nice to meet you. I am a 19-year-old artist who adores the theme of the Middle Ages in all its manifestations, I draw it all day long. In short, I just can\'t imagine my life without drawing and creativity.',
+          links: {
+            twitter: 'https://twitter.com/chell_tot'
+          },
+          messagesList: [
+            {
+              type: 'sent',
+              text: [
+                'What were your first steps in digital art? How did you find this art direction?'
+              ]
+            },
+            {
+              type: 'received',
+              text: [
+                'The pencil ended up in my hand right after birth, and the stylus a little later. Like all children, I drew all sorts of nonsense on scraps of paper in a cage, albums, and notebooks, and did not spare even the walls.',
+                'At twelve I was sent to art school. Jugs, still lifes, all the most "interesting" for studying the basics and the base. Of course, I didn\'t like it, because I was more interested in anime girls. I stayed at the art school for three years, after which the era of studios and college began. There were many different teachers and approaches, points of view, and manners of the image. Drawing and painting literally absorbed and fascinated me. Drawing became not an occupation, but a meaning, a goal, an unattainable task, from which the eyes burned. However, it didn\'t always work out. Somewhere in the second year, I was overtaken by a digital, an outlandish thing with a button "make it beautiful", which I have not yet found. I studied CG through YouTube channels, books,speed pointss, and a bunch of other materials.'
+              ]
+            }
+          ]
         }
+        // {
+        //   avatar: '/images/avatars/nikvsio.png',
+        //   name: 'NIKVSIO'
+        // },
+        // {
+        //   avatar: '/images/avatars/hoshiBg.png',
+        //   name: 'Hoshi'
+        // },
+        // {
+        //   avatar: '/images/avatars/nikoBg.png',
+        //   name: 'NICO'
+        // },
+        // {
+        //   avatar: '/images/avatars/ERMKVbg.png',
+        //   name: 'ERMKV'
+        // },
+        // {
+        //   avatar: '/images/avatars/DiMAbg.png',
+        //   name: 'DiMA'
+        // },
+        // {
+        //   avatar: '/images/avatars/BTTGbg.png',
+        //   name: 'IM BTTG'
+        // },
+        // {
+        //   avatar: '/images/avatars/YarzhombekBg.png',
+        //   name: 'Tim Yarzhombek'
+        // },
+        // {
+        //   avatar: '/images/avatars/VladimirBg.png',
+        //   name: 'Vladimir Ayuev'
+        // },
+        // {
+        //   avatar: '/images/avatars/thisworldout.png',
+        //   name: 'thisworldout'
+        // },
+        // {
+        //   avatar: '/images/avatars/BXBbg.png',
+        //   name: 'BXB.STD'
+        // }
+
+        // @NOTE в структурах, которые легко различить, лучше не ставить лишние пустые строки. Из-за лишних пустых строк читабельность не увеличится, а только меньше информации в мониторе поместится. Конечно, это вкусовщина, но сама сравни как было и как стало. На мой взгляд, все также читабельное и более компактно.
+        // БЫЛО
+        //   {
+        //   avatar: '/images/avatars/VladimirBg.png',
+        //   name: 'Vladimir Ayuev'
+        // },
+        //
+        // {
+        //   avatar: '/images/avatars/thisworldout.png',
+        //   name: 'thisworldout'
+        // },
+        //
+        // {
+        //   avatar: '/images/avatars/BXBbg.png',
+        //   name: 'BXB.STD'
+        // }
       ]
     }
   },
 
   methods: {
     openModal (artist) {
+      this.$store.dispatch('artistsModal/getArtistData', artist)
       this.$store.dispatch('modal/modalOpen', 'ArtistsModal')
     }
   }

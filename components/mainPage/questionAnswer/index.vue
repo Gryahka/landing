@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import CustomAccordion from '@/components/customAccordion/index.vue'
+import CustomAccordion from '@/components/ui/customAccordion/index.vue'
 
 export default {
   name: 'QuestionAnswer',

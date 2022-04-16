@@ -3,60 +3,29 @@
     <div class="artistsModal__top">
       <img
         class="artistsModal__leftImg"
-        src="/icons/closeIcon.png"
-        alt="cross"
+        :src="artistData.avatar"
+        :alt="artistData.name"
       >
 
       <div class="artistsModal__right">
         <h1 class="artistsModal__name border border--half">
-          NIKVSIO
+          {{ artistData.name }}
         </h1>
 
         <p class="artistsModal__preview">
-          jgjfth rshrhst rdh rdh rheshthsbrvscdz
+          {{ artistData.preview }}
         </p>
 
         <div class="artistsModal__social">
           <a
+            v-for="(item, index) in artistData.links"
+            :key="index"
             class="artistsModal__link"
-            href="/"
+            :href="item"
           >
             <svgicon
               class="artistsModal__icon"
-              :name="'crossPlus'"
-              :original="true"
-            />
-          </a>
-
-          <a
-            class="artistsModal__link"
-            href="/"
-          >
-            <svgicon
-              class="artistsModal__icon"
-              :name="'crossPlus'"
-              :original="true"
-            />
-          </a>
-
-          <a
-            class="artistsModal__link"
-            href="/"
-          >
-            <svgicon
-              class="artistsModal__icon"
-              :name="'crossPlus'"
-              :original="true"
-            />
-          </a>
-
-          <a
-            class="artistsModal__link"
-            href="/"
-          >
-            <svgicon
-              class="artistsModal__icon"
-              :name="'crossPlus'"
+              :name="'icon' + index"
               :original="true"
             />
           </a>
@@ -77,19 +46,17 @@
 
       <!-- @NOTE новая версия чата -->
       <div class="artistsModal__chat">
-        <div class="artistsModal__message artistsModal__message_sent">
-          <p class="artistsModal__msgText">
-            Hi, Nikvsio! Tell about yourself
-          </p>
-
-          <p class="artistsModal__msgText">
-            Second paragraph
-          </p>
-        </div>
-
-        <div class="artistsModal__message artistsModal__message_received">
-          <p class="artistsModal__msgText">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti cupiditate reiciendis commodi ea, ipsum laboriosam excepturi earum maiores sapiente molestias quam laborum? Dignissimos quis doloribus nihil dolor praesentium culpa.
+        <div
+          v-for="(item, index) in artistData.messagesList"
+          :key="index"
+          class="artistsModal__message"
+          :class="{
+            'artistsModal__message_sent' : item.type === 'sent',
+            'artistsModal__message_received' : item.type === 'received'
+          }"
+        >
+          <p v-for="(paragraph, pIndex) in item.text" :key="pIndex" class="artistsModal__msgText">
+            {{ paragraph }}
           </p>
         </div>
       </div>
@@ -114,13 +81,20 @@
 
 <script>
 export default {
-  name: 'ArtistsModal'
+  name: 'ArtistsModal',
+
+  props: {
+    artistData: {
+      type: Object,
+      default: () => {}
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .artistsModal {
-  // @NOTE лучше задавать "резиновые" величины. Огромная модалка при маленьком контенте выглядит не оч(
+  // @NOTE лучше задавать "резиновые" величины. Огромная модалка при маленьком контенте выглядит не оч (❁´◡`❁)
   max-width: 890px;
   // width: 890px;
   max-height: 95vh;

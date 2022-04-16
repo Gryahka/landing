@@ -22,3 +22,12 @@
 .txGreyDark {
   color: $greyDark;
 }
+
+// Titles
+.title_1 {
+  font-family: 'Cinzel';
+  font-size: 72px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  color: var(--title_primary);
+}
