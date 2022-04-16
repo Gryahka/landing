@@ -1,0 +1,5 @@
+{
+  "nuxt.isNuxtApp": true,
+  "prettier.singleQuote": true,
+  "prettier.proseWrap": "always"
+}
