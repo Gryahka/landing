@@ -122,7 +122,13 @@ export default {
           name: 'Chell',
           preview: 'Hi, my name is Lisa, nice to meet you. I am a 19-year-old artist who adores the theme of the Middle Ages in all its manifestations, I draw it all day long. In short, I just can\'t imagine my life without drawing and creativity.',
           links: {
-            twitter: 'https://twitter.com/chell_tot'
+            twitter: 'https://twitter.com/chell_tot',
+            openSea: 'https://twitter.com/chell_tot',
+            foundation: 'https://twitter.com/chell_tot',
+            instagram: 'https://twitter.com/chell_tot',
+            behance: 'https://twitter.com/chell_tot',
+            facebook: 'https://twitter.com/chell_tot',
+            site: 'https://twitter.com/chell_tot'
           },
           messagesList: [
             {

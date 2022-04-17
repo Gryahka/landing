@@ -1,5 +1,6 @@
 // main
 body {
+  font-family: "Inter";
   font-size: 16px;
   line-height: 21px;
   color: $white;
@@ -67,12 +68,10 @@ ul {
 
   border: 2px solid $gold;
 
-  background: linear-gradient(
-      180deg,
+  background: linear-gradient(180deg,
       rgba(255, 255, 255, 0.32) 0%,
       rgba(255, 255, 255, 0.08) 51.04%,
-      rgba(255, 255, 255, 0) 100%
-    ),
+      rgba(255, 255, 255, 0) 100%),
     url("/images/buttonBg.jpg");
   background-position-y: center;
 
@@ -115,21 +114,17 @@ ul {
   border-image-slice: 1;
 
   &--line {
-    border-image-source: radial-gradient(
-      circle,
-      rgba(201, 128, 254, 0.6) 30%,
-      rgba(201, 128, 254, 0) 100%
-    );
+    border-image-source: radial-gradient(circle,
+        rgba(201, 128, 254, 0.6) 30%,
+        rgba(201, 128, 254, 0) 100%);
 
     padding-bottom: 20px;
   }
 
   &--half {
-    border-image-source: linear-gradient(
-      90deg,
-      #c980fe 0%,
-      rgba(201, 128, 254, 0) 100%
-    );
+    border-image-source: linear-gradient(90deg,
+        #c980fe 0%,
+        rgba(201, 128, 254, 0) 100%);
   }
 }
 
