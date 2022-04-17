@@ -18,7 +18,10 @@
       </div>
 
       <div class="banner__center">
-        <h1 class="banner__centerTitle txGold">
+        <h1
+          id="main"
+          class="banner__centerTitle txGold"
+        >
           Bold Point — Art Project
         </h1>
 
@@ -93,9 +96,10 @@ export default {
 @import "~/assets/scss/styles/variables.scss";
 
 .banner {
-max-width: 1920px;
+  max-width: 1920px;
 
-margin: 0 auto;
+  margin: 0 auto;
+  padding-bottom: 110px;
 
   background-image: linear-gradient(
       90.39deg,

@@ -1,100 +1,101 @@
 <template>
   <div class="bold">
-    <div class="bold__inner">
-      <div class="bold__top">
-        <h1 class="bold__title">
-          Bold Point is
-        </h1>
+    <div class="bold__top">
+      <h1 class="bold__title border border--line">
+        Bold Point is
+      </h1>
 
-        <div class="bold__topLineRow">
-          <svgicon
-            class="bold__topLine bold__topLine--left"
-            :name="'halfLineLilac'"
-            :original="true"
-          />
-
-          <svgicon
-            class="bold__topLine bold__topLine--right"
-            :name="'halfLineLilac'"
-            :original="true"
-          />
-        </div>
-
-        <div class="bold__textRow">
-          <img
-            class="bold__ornament bold__ornament--left"
-            src="/icons/ornamentSmall.png"
-            alt="ornament"
-          >
-
-          <p class="bold__text">
-            Bold Point is your portal to a parallel universe
-          </p>
-
-          <img
-            class="bold__ornament bold__ornament--right"
-            src="/icons/ornamentSmall.png"
-            alt="ornament"
-          >
-        </div>
+      <div class="bold__textRow">
+        <p class="bold__text">
+          Bold Point is your portal to a parallel universe
+        </p>
       </div>
+    </div>
 
-      <!-- <img
-        class="bold__bgLight"
-        src="/images/light.png"
-        alt="ornament"
-      > -->
-      <div class="bold__bgLight bold__bgLight--left" />
-      <div class="bold__bgLight bold__bgLight--right" />
-
-      <!-- <div class="bold__slider"> -->
-      <div class="bold__sliderInner">
-        <SliderPoint />
-      </div>
-      <!-- </div> -->
+    <div class="bold__bottom">
+      <Swiper
+        :options="swiperOptions"
+        class="timelineCards__swiper"
+      >
+        <SwiperSlide
+          v-for="(item, index) in slideList"
+          :key="index"
+          class="timelineCards__slide"
+        >
+          <AboutSlide :slide-data="item" />
+        </SwiperSlide>
+      </Swiper>
     </div>
   </div>
 </template>
 
 <script>
-import SliderPoint from '@/components/mainPage/boldPoint/sliderPoint/index.vue'
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import AboutSlide from './aboutSlide/index.vue'
 
 export default {
   name: 'BoldPoint',
-
   components: {
-    SliderPoint
+    Swiper,
+    SwiperSlide,
+    AboutSlide
+  },
+
+  data () {
+    return {
+      swiperOptions: {
+        autoplay: {
+          delay: 3000
+        }
+      },
+      slideList: [
+        {
+          title: 'The Plot and Setting',
+          text: 'Bold Point — is an alternative reality, stuck in between dimensions, a mosaic of our world’s different pieces torn out of order and crashed by an ancient civilization.',
+          img: '/images/mainAbout/slides/img_1.jpg'
+        },
+        {
+          title: 'DAO and DeFi mechanics',
+          text: 'The community has the power to decide on the use of different characters, tactics, and other objects in a completely transparent and decentralized manner.',
+          img: '/images/mainAbout/slides/img_2.jpg'
+        },
+        {
+          title: 'Play to Earn',
+          text: 'In Bold Point, your gaming skills have real value and can bring you uncountable rewards. With few steps you can extract game resources, craft new items and sell them to players on the market or NPC shops.',
+          img: '/images/mainAbout/slides/img_3.jpg'
+        },
+        {
+          title: 'BP Arena',
+          text: 'The Bold Point champions team will battle against other contenders. The winner will be the last player standing.',
+          img: '/images/mainAbout/slides/img_4.jpg'
+        },
+        {
+          title: 'Gold PvP',
+          text: 'Battles against other characters in which the winner receives a prize pool determined by the participants',
+          img: '/images/mainAbout/slides/img_5.jpg'
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/styles/variables.scss";
-
 .bold {
-max-width: 1920px;
+  margin: 0 auto;
+  padding: 80px 16px;
 
-margin: 0 auto;
+  max-width: 1920px;
 
-  background-image: url("/images/pointsBg.png");
-  background-repeat: no-repeat;
-  background-position-x: center;
-
-  position: relative;
-
-  &__inner {
-  margin-top: 225px;
-
-    background-image: url("/images/bdrBgPoints.png");
-    background-repeat: no-repeat;
-  background-position-x: 546px;
-  background-position-y: 93px;
-  }
+  background: url("/images/mainAbout/bgAbout.jpg") no-repeat 50% 50%/cover;
 
   &__title {
+    margin: 0 auto 32px;
+    padding: 0 100px 16px;
+
+    width: fit-content;
+
     font-family: "Cinzel";
-    font-style: normal;
-    font-weight: 400;
     font-size: 72px;
     line-height: 72px;
 
@@ -102,55 +103,43 @@ margin: 0 auto;
 
     text-align: center;
     letter-spacing: -0.02em;
-
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
-
-    margin-bottom: 6px;
-  }
-
-  &__topLineRow {
-    display: flex;
-
-    margin-bottom: 32px;
-  }
-
-  &__topLine {
-    position: absolute;
-
-    width: 406px;
-
-    &--left {
-      transform: rotate(180deg);
-      left: 527px;
-    }
-
-    &--right {
-      left: 932px;
-    }
   }
 
   &__textRow {
-    display: flex;
-justify-content: center;
     position: relative;
 
-    margin-bottom: 76px;
-  }
+    display: flex;
+    justify-content: center;
 
-  &__ornament {
-    position: absolute;
+    margin: 0 auto 85px;
 
-    width: 24px;
-    height: 35px;
+    width: fit-content;
 
-    &--left {
-      transform: rotate(-90deg);
-      left: 667px;
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+
+      display: block;
+
+      width: 35px;
+      height: 35px;
+
+      background: url('/icons/ornamentSmall.png') no-repeat center center/contain;
     }
 
-    &--right {
+    &::after {
+      right: -55px;
+
       transform: rotate(90deg);
-      left: 1167px;
+    }
+
+    &::before {
+      left: -55px;
+
+      transform: rotate(-90deg);
     }
   }
 
@@ -165,30 +154,6 @@ justify-content: center;
 
     text-align: center;
     opacity: 0.7;
-  }
-
-  &__bgLight {
-    position: absolute;
-
-background: #A63DFF;
-    filter: blur(600px);
-transform: matrix(-1, 0, 0, 1, 0, 0);
-    width: 411px;
-    height: 411px;
-    border-radius: 50%;
-
-    &--left {
-      left: -227px;
-    }
-
-     &--right {
-      right: 1px;
-      bottom: -208px;
-    }
-  }
-
-  &__sliderInner {
-    // margin-bottom: 202px;
   }
 }
 </style>
