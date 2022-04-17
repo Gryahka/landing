@@ -68,12 +68,12 @@ export default {
         },
 
         {
-          head: 'Where can I see the full list of NFT arts?',
+          head: 'Where can I see the full list of NFT artworks?',
           body: 'We will announce new artists and their works every 3 days in our Telegram, Discord, and Twitter channels. Keep watching!'
         },
 
         {
-          head: 'How to participate in your project as an artist?',
+          head: 'How can I participate in your project as an artist',
           body: 'We always welcome new artists who have a feel for the Bold Point metaverse to join. If you are interested in partaking in our project – feel free to contact us.'
         },
 
