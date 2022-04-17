@@ -25,14 +25,11 @@
       </div>
 
       <p class="gallery__textGold txGold">
-        Now it's your turn to enter a new virtual environment and find your
+        Now it's your turn to enter a new virtual<br> environment and find your
         destiny!
       </p>
 
-      <nuxt-link
-        class="gallery__link btn"
-        to="/"
-      >
+      <nuxt-link class="gallery__link btn" to="/">
         <img
           class="gallery__btnIcon btn__icon btn__icon--left"
           src="/icons/ornament.png"
@@ -63,17 +60,20 @@ export default {
 @import "~/assets/scss/styles/variables.scss";
 .gallery {
   background-image: url("/images/welcomBg.png");
-background-repeat: no-repeat;
-background-position-x: center;
+  background-repeat: no-repeat;
+  background-position-x: center;
 
   &__inner {
     padding-top: 120px;
-    padding-bottom: 220px;
+    padding-bottom: 160px;
+
+    @media (max-width: $media_xl) {
+      padding-bottom: 223px;
     }
+  }
 
   &__title {
     font-family: "Cinzel";
-    font-style: normal;
     font-weight: 400;
     font-size: 72px;
     line-height: 72px;
@@ -84,13 +84,20 @@ background-position-x: center;
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
 
     margin-bottom: 44px;
+
+    @media (max-width: $media_xl) {
+      font-size: 50px;
+
+      margin-bottom: 25px;
+    }
   }
 
   &__textRow {
-    margin-bottom: 40px;
     display: flex;
+    justify-content: center;
     gap: 20px;
-   justify-content: center;
+
+    margin-bottom: 40px;
   }
 
   &__ornament {
@@ -110,17 +117,19 @@ background-position-x: center;
 
   &__text {
     font-family: "Inter";
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
 
     text-align: center;
+
+    @media (max-width: $media_xl) {
+      font-size: 16px;
+    }
   }
 
   &__textGold {
     font-family: "Cinzel";
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
@@ -129,6 +138,13 @@ background-position-x: center;
     letter-spacing: 0.04em;
 
     margin-bottom: 48px;
+
+    @media (max-width: $media_xl) {
+      font-size: 18px;
+
+    margin-bottom: 28px;
+
+    }
   }
 }
 

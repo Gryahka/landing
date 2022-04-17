@@ -68,46 +68,53 @@ export default {
 @import "~/assets/scss/styles/variables.scss";
 
 .customAccordion {
-  padding-bottom: 24px;
+    padding-bottom: 24px;
 
-  border-bottom-style: solid;
-  border-image-slice: 1;
-  border-width: 2px;
-  border-image-source: radial-gradient(circle, rgba(201, 128, 254, 0.6) 30%, rgba(201, 128, 254, 0) 100%);
+    border-bottom-style: solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: radial-gradient(
+        circle,
+        rgba(201, 128, 254, 0.6) 30%,
+        rgba(201, 128, 254, 0) 100%
+    );
 
-  &__head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    cursor: pointer;
-  }
-
-  &__iconHead {
-    transition: 0.3s;
-
-    &_open {
-      transform: rotate(45deg);
+    @media (max-width: $media_xl) {
+        padding-bottom: 12px;
     }
-  }
 
-  &__body {
-    max-height: 0px;
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-    overflow: hidden;
-
-    opacity: 0;
-
-    transition: opacity .5s,max-height .5s ease-in;
-
-    &_open {
-      max-height: 5000px;
-
-      overflow: visible;
-
-      opacity: 1;
+        cursor: pointer;
     }
-  }
+
+    &__iconHead {
+        transition: 0.3s;
+
+        &_open {
+            transform: rotate(45deg);
+        }
+    }
+
+    &__body {
+        max-height: 0px;
+
+        overflow: hidden;
+
+        opacity: 0;
+
+        transition: opacity 0.5s, max-height 0.5s ease-in;
+
+        &_open {
+            max-height: 5000px;
+
+            overflow: visible;
+
+            opacity: 1;
+        }
+    }
 }
-
 </style>
