@@ -46,7 +46,8 @@ export default {
       swiperOptions: {
         autoplay: {
           delay: 3000
-        }
+        },
+        loop: true
       },
       slideList: [
         {
