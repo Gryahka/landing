@@ -21,36 +21,66 @@
     </div>
 
     <div class="mainTimeline__timeline timeline">
-      <div
-        v-for="(item, index) in timelineList"
-        :key="index"
-        class="timeline__row"
-      >
-        <div class="timeline__artist">
-          <p class="timeline__date">
-            {{ item.date }}
-          </p>
+      <div class="timeline__inner">
+        <div
+          v-for="(item, index) in timelineList"
+          :key="index"
+          class="timeline__row"
+        >
+          <div class="timeline__artist">
+            <div class="timeline__wrap">
+              <p class="timeline__date">
+                {{ item.date }}
+              </p>
 
-          <div class="timeline__avatar avatar">
-            <img
-              class="avatar__img"
-              :src="item.avatar"
-              :alt="item.artist"
-            >
+              <div class="timeline__avatar avatar">
+                <img
+                  class="avatar__img"
+                  :src="item.avatar"
+                  :alt="item.artist"
+                >
 
-            <p class="avatar__name">
-              {{ item.artist }}
-            </p>
+                <p class="avatar__name">
+                  {{ item.artist }}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline__line">
+            <svgicon
+              class="timeline__dot"
+              name="dotStyled"
+              :original="true"
+            />
+          </div>
+
+          <div class="timeline__slider">
+            <TimelineCards
+              :cards-data="item.nftList"
+              :artist-name="item.artist"
+            />
           </div>
         </div>
-
-        <div>
-          <TimelineCards
-            :cards-data="item.nftList"
-            :artist-name="item.artist"
-          />
-        </div>
       </div>
+
+      <button class="timeline__btn btn">
+        <img
+          class="btn__icon btn__icon--left"
+          src="/icons/ornament.png"
+          alt="ornament"
+        >
+
+        <p class="btn__text txWhite">
+          Show more
+        </p>
+
+        <img
+          class="btn__icon btn__icon--right"
+          src="/icons/ornament.png"
+          alt="ornament"
+        >
+      </button>
     </div>
   </div>
 </template>
@@ -125,6 +155,13 @@ export default {
 
 <style lang="scss" scoped>
 .mainTimeline {
+  padding: 60px 0 150px;
+
+  background: url('/images/mainTimeline/bgGame.jpg') no-repeat;
+  background-position: bottom;
+
+  box-shadow: inset 0px 0px 20px 11px var(--bg_main);
+
   &__top {
   }
 
@@ -136,7 +173,38 @@ export default {
   }
 
   &__topTx {
-    margin-bottom: 85px;
+    position: relative;
+
+    margin: 0 auto 85px;
+
+    width: fit-content;
+
+    &::before,
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 0;
+
+      display: block;
+
+      width: 35px;
+      height: 35px;
+
+      background: url('/icons/ornamentSmall.png') no-repeat center center/contain;
+    }
+
+    &::after {
+      right: -55px;
+
+      transform: rotate(90deg);
+    }
+
+    &::before {
+      left: -55px;
+
+      transform: rotate(-90deg);
+    }
   }
 
   &__tx {
@@ -155,13 +223,44 @@ export default {
 }
 
 .timeline {
+  &__inner {
+    display: grid;
+    gap: 80px;
+
+    margin-bottom: 220px;
+  }
 
   &__row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      & .timeline__artist {
+        justify-content: flex-start;
+      }
+
+      & .timeline__slider {
+        &::before {
+          background: rgb(154 161 56 / 28%);
+
+          box-shadow: 50px -17px 90px 80px rgba(154, 161, 56, 0.28);
+
+          animation: rotation 5s infinite linear;
+        }
+      }
+    }
   }
 
   &__artist {
+    display: flex;
+    justify-content: flex-end;
+    flex-shrink: 0;
+
+    margin-top: 120px;
+
+    width: 405px;
   }
 
   &__date {
@@ -184,10 +283,59 @@ export default {
 
   &__avatar {
   }
+
+  &__line{
+    position: relative;
+
+    display: flex;
+    flex-shrink: 0;
+
+    width: 190px;
+
+    &::before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: calc(50% - 2px);
+
+      width: 2px;
+      height: 80%;
+
+      background: radial-gradient(circle, rgba(255,255,255,1) 73%, rgba(143,176,210,0) 100%);
+
+      transform: translateY(-50%);
+    }
+  }
+
+  &__dot{
+    position: relative;
+  }
+
+  &__slider{
+    position: relative;
+
+    flex-shrink: 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 30%;
+
+      width: 100%;
+      height: 50%;
+
+      border-radius: 50%;
+
+      background: rgb(166 61 255 / 25%);
+
+      box-shadow: 20px -17px 90px 80px rgb(166 61 255 / 28%);
+
+      animation: rotation 5s infinite linear reverse;
+    }
+  }
 }
 
 .avatar {
-
   &__img {
     margin-bottom: 16px;
 
@@ -203,6 +351,15 @@ export default {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--title_secondary);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
 </style>

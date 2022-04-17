@@ -79,11 +79,12 @@ export default {
   data () {
     return {
       swiperOptions: {
-        // autoplay: {
-        //   delay: 5000
-        // },
+        autoplay: {
+          delay: 3000
+        },
         loop: true,
         speed: 700,
+        effect: 'coverflow',
         slidesPerView: 'auto',
         pagination: {
           el: '.timelineCards__pagination',
