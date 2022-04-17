@@ -62,15 +62,15 @@ export default {
     letter-spacing: -0.02em;
 
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
-
-    margin-bottom: 47px;
+    margin: 0 auto;
   }
 
   &__textRow {
-    display: flex;
+      display: flex;
     justify-content: center;
     position: relative;
 
+      margin-top: 47px;
     margin-bottom: 76px;
   }
 

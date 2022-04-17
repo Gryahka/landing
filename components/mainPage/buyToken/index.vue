@@ -65,6 +65,7 @@ export default {
 
 .token {
     margin: 0 auto 0 auto;
+    padding: 0 15px 0 15px;
 
     max-width: 1728px;
     border-bottom-style: solid;
