@@ -65,21 +65,6 @@
           </p>
         </div>
       </div>
-
-      <!-- @NOTE старая версия чата -->
-      <!-- <div class="artistsModal__message">
-        <div class="artistsModal__senderBox">
-          <p class="artistsModal__sender">
-            Hi, Nikvsio! Tell about yourself
-          </p>
-        </div>
-
-        <div class="artistsModal__receivingBox">
-          <p class="artistsModal__receiving">
-            I am a digital/multimedia artist and designer, working on the borderline of analog and digital technology, based in Amsterdam. Currently, I am working as an independent designer, artist, and curator on self-initiated and commissioned projects. Those projects take roots from my position as an international designer and a frequent traveler, allowing me to study and experience often diverse perspectives. My interests span over a wide range of topics. They include various critical social-political issues that are often given form through high-tech experiments and multimedia platforms questioning on and offline realities.
-          </p>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>
@@ -99,11 +84,8 @@ export default {
 
 <style lang="scss" scoped>
 .artistsModal {
-  // @NOTE лучше задавать "резиновые" величины. Огромная модалка при маленьком контенте выглядит не оч (❁´◡`❁)
   max-width: 890px;
-  // width: 890px;
   max-height: 95vh;
-  // height: 811px;
 
   padding: 52px 91px 52px 98px;
 
@@ -205,8 +187,6 @@ export default {
     gap: 30px;
   }
 
-  // <-- @NOTE начало новых стилей
-  // @NOTE есть блок artistsModal__message (сообщение), у этого блока есть модификаторы для отрпвленного и принятого сообщения. Дублирующиеся стили хрянтся в классе artistsModal__message, а отличающиеся в классах модификаторах
   &__message {
     padding: 8px 20px;
 
@@ -228,55 +208,9 @@ export default {
     }
   }
 
-  //  @NOTE  лучше задавать стили конкретно блоку сообщения, а не через наследование из родителя, как это было сделано раньше. Почему? Вдруг, у нас к сообщению добавится время отрпавки или неважно какой элемент с отливчающимися стилями. И в таком случае есть вероятность, что их нужно будет переоределять.
   &__msgText {
     font-family: "Inter";
     line-height: 32px;
   }
-
-  // --> @NOTE конец новых стилей
-
-  // @NOTE новые стили чата
-
-  /* <-- @NOTE старые стили чата
-  &__message {
-    display: grid;
-    gap: 30px;
-
-    font-family: "Inter";
-    font-size: 16px;
-    line-height: 32px;
-  }
-
-  &__senderBox {
-    justify-self: end;
-
-    width: fit-content;
-
-    padding: 8px 20px;
-
-    border-radius: 25px 25px 0px 25px;
-
-    background: linear-gradient(339.78deg, #221629 0%, #4d3859 100%);
-  }
-
-  &__sender {
-    max-width: 595px;
-  }
-
-  &__receivingBox {
-    padding: 11px 24px;
-
-    width: fit-content;
-
-    border-radius: 25px 25px 25px 0px;
-
-    background: linear-gradient(339.78deg, #221629 0%, #4d3859 100%);
-  }
-
-  &__receiving {
-    max-width: 595px;
-  }
-  --> @NOTE старые стили */
 }
 </style>

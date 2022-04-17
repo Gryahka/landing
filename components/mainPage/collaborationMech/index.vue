@@ -138,31 +138,45 @@ export default {
 
   &__inner {
     margin: 202px 150px 196px 150px;
+
+    @media (max-width: $media_xl) {
+      margin: 110px 54px 110px 54px;
+    }
   }
 
   &__title {
     font-family: "Cinzel";
-    font-style: normal;
     font-weight: 400;
     font-size: 72px;
     line-height: 64px;
     color: $lilac;
 
     text-align: center;
-    // align-items: center;
     letter-spacing: 0.04em;
 
-    margin-bottom: 94px;
+    margin: 0 auto;
+
+    @media (max-width: $media_xl) {
+      font-size: 50px;
+    }
   }
 
   &__topDescr {
     display: flex;
+    justify-content: space-between;
     gap: 78px;
+
+    margin-top: 94px;
+
+    @media (max-width: $media_xl) {
+      gap: 25px;
+      margin-top: 55px;
+    }
   }
 
   &__descrBox {
-    width: 489px;
-    height: 157px;
+    width: 100%;
+    height: 100%;
 
     padding: 29px 0 29px 0;
     border-width: 0 3px 4px 5px;
@@ -173,6 +187,10 @@ export default {
     &__bdrLilac {
       border: 4px solid $lilac;
     }
+
+    @media (max-width: $media_xl) {
+      padding: 15px 0 15px 0;
+    }
   }
 
   &__decrtInner {
@@ -181,7 +199,6 @@ export default {
 
   &__descrSubtitle {
     font-family: "Cinzel";
-    font-style: normal;
     font-weight: 400;
     font-size: 48px;
     line-height: 24px;
@@ -191,17 +208,26 @@ export default {
     margin-bottom: 13px;
 
     white-space: nowrap;
+
+    @media (max-width: $media_xl) {
+      font-size: 24px;
+
+      margin-bottom: 8px;
+    }
   }
 
   &__descrText {
     font-family: "Inter";
-    font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 
     text-align: center;
     opacity: 0.7;
+
+    @media (max-width: $media_xl) {
+      font-size: 14px;
+    }
   }
 
   &__bottom {
@@ -222,11 +248,15 @@ export default {
   &__main {
     padding-top: 120px;
     padding-bottom: 151px;
+
+    @media (max-width: $media_xl) {
+      padding-top: 80px;
+      padding-bottom: 120px;
+    }
   }
 
   &__bottomTitle {
     font-family: "Cinzel";
-    font-style: normal;
     font-weight: 400;
     font-size: 56px;
     line-height: 56px;
@@ -237,11 +267,16 @@ export default {
     letter-spacing: -0.02em;
 
     margin-bottom: 44px;
+
+    @media (max-width: $media_xl) {
+      font-size: 46px;
+
+      margin-bottom: 17px;
+    }
   }
 
   &__text {
     font-family: "Inter";
-    font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
@@ -253,14 +288,16 @@ export default {
     opacity: 0.7;
 
     margin-bottom: 50px;
-  }
 
-  &__step {
+    @media (max-width: $media_xl) {
+      font-size: 16px;
+
+      margin-bottom: 25px;
+    }
   }
 
   &__stepText {
     font-family: "Cinzel";
-    font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 28px;
@@ -268,6 +305,10 @@ export default {
     color: $white;
 
     text-align: center;
+
+    @media (max-width: $media_xl) {
+      font-size: 18px;
+    }
   }
 
   &__bottomOrnament {
@@ -311,8 +352,12 @@ export default {
 }
 
 .border {
-  width: 1282px;
-  padding: 20px;
+  width: 100%;
+  padding-bottom: 20px;
+
+  @media (max-width: $media_xl) {
+      padding-bottom: 10px;
+    }
 }
 
 </style>
