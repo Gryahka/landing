@@ -98,6 +98,18 @@ export default {
               link: '/'
             },
             {
+              name: 'KNIGHT OF LIGHT',
+              prcie: '0.09 ETH 1/1',
+              img: 'knightOfLight.jpg',
+              link: '/'
+            },
+            {
+              name: 'KNIGHT OF LIGHT',
+              prcie: '0.09 ETH 1/1',
+              img: 'knightOfLight.jpg',
+              link: '/'
+            },
+            {
               name: 'Desert Artifact',
               prcie: '0.05 ETH 1/5',
               img: 'desertArtifact.jpg',
