@@ -23,11 +23,11 @@
             class="artistsModal__link"
             :href="item"
           >
-            <svgicon
+            <img
               class="artistsModal__icon"
-              :name="'icon' + index"
-              :original="true"
-            />
+              :src="'/icons/' + index + '.png'"
+              :alt="index"
+            >
           </a>
         </div>
       </div>
@@ -36,7 +36,8 @@
     <div class="artistsModal__descr">
       <div class="artistsModal__textBox">
         <p class="artistsModal__text mb30">
-          As part of the collaboration, we decided to interview each artist to reveal him from different angles.
+          As part of the collaboration, we decided to interview each artist to
+          reveal him from different angles.
         </p>
 
         <p class="artistsModal__text">
@@ -51,11 +52,15 @@
           :key="index"
           class="artistsModal__message"
           :class="{
-            'artistsModal__message_sent' : item.type === 'sent',
-            'artistsModal__message_received' : item.type === 'received'
+            artistsModal__message_sent: item.type === 'sent',
+            artistsModal__message_received: item.type === 'received',
           }"
         >
-          <p v-for="(paragraph, pIndex) in item.text" :key="pIndex" class="artistsModal__msgText">
+          <p
+            v-for="(paragraph, pIndex) in item.text"
+            :key="pIndex"
+            class="artistsModal__msgText"
+          >
             {{ paragraph }}
           </p>
         </div>
@@ -106,22 +111,22 @@ export default {
   overflow: auto;
 
   &::before {
-      content: "";
+    content: "";
 
-      position: absolute;
-      bottom: 0px;
-      left: 0px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 
-      width: calc(100% - 14px);
-      height: 305px;
+    width: calc(100% - 14px);
+    height: 305px;
 
-      background: linear-gradient(
-          360deg,
-          #000000 40.03%,
-          rgba(0, 0, 0, 0) 111.5%
-      );
+    background: linear-gradient(
+      360deg,
+      #000000 40.03%,
+      rgba(0, 0, 0, 0) 111.5%
+    );
 
-      pointer-events: none;
+    pointer-events: none;
   }
 
   &__top {
@@ -151,7 +156,6 @@ export default {
     font-size: 32px;
     line-height: 32px;
     letter-spacing: 0.04em;
-
   }
 
   &__preview {
@@ -166,16 +170,23 @@ export default {
   }
 
   &__social {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
+  }
 
-    max-width: 141px;
+  &__link {
+    filter: grayscale(0);
+
+    transition: 0.3s;
+
+    &:hover {
+      filter: grayscale(0.8);
+    }
   }
 
   &__icon {
-    width: 20px;
-    height: 17px;
+    height: 24px;
   }
 
   &__textBox {
