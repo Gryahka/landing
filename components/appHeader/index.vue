@@ -67,7 +67,6 @@
           </p>
         </nuxt-link>
       </div>
-
       <button class="header__btn">
         <p class="header__btnText txWhite">
           Join Vr-Gallery
@@ -75,7 +74,10 @@
       </button>
     </div>
 
-    <div class="header__fake" aria-hidden="true" />
+    <div
+      class="header__fake"
+      aria-hidden="true"
+    />
   </header>
 </template>
 
@@ -86,6 +88,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .header {
   &__wrap {
     max-width: 1920px;
@@ -97,8 +100,10 @@ export default {
     left: 0;
     z-index: 10;
 
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 194px auto 209px;
+
+    gap: 114px;
 
     align-items: center;
 
@@ -110,27 +115,42 @@ export default {
     @supports not (backdrop-filter: blur(48px)) {
       background: rgba(37, 37, 37, 0.76);
     }
+
+    @media (max-width: $media_xl) {
+      grid-template-columns: 150px auto 150px;
+      gap: 0px 43px;
+
+      padding: 0px 54px;
+    }
   }
 
   &__center {
-    width: fit-content;
     display: flex;
     justify-content: space-between;
+
+    width: fit-content;
   }
 
   &__logoLink {
     display: block;
     width: 209px;
+
+    @media (max-width: $media_xl) {
+      width: 150px;
+    }
   }
 
   &__link {
     position: relative;
     z-index: 2;
 
-    padding: 36px 40px 28px 40px;
+    padding: 38px 40px 28px 40px;
+    align-items: center;
 
     text-transform: uppercase;
     transition: 0.6s;
+
+    white-space: nowrap;
 
     &:hover {
       color: $gold;
@@ -198,11 +218,15 @@ export default {
 
       opacity: 0;
     }
+
+    @media (max-width: $media_xl) {
+      padding: 28px 8px 28px 8px;
+    }
   }
 
   &__linkText {
     &::after {
-      content: '';
+      content: "";
 
       position: absolute;
       top: 0;
@@ -230,6 +254,8 @@ export default {
 
     width: 193px;
     max-width: 100%;
+
+    height: 38px;
 
     border: 1px solid $white;
     border-radius: 8px;
