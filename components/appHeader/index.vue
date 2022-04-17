@@ -1,77 +1,79 @@
 <template>
   <header class="header">
     <div class="header__wrap">
-      <nuxt-link
-        class="header__logoLink"
-        to="/"
-      >
-        <svgicon
-          class="header__logo"
-          :name="'logo'"
-          :original="true"
-        />
-      </nuxt-link>
-
-      <div class="header__center">
+      <div class="header__inner container">
         <nuxt-link
-          class="header__link"
+          class="header__logoLink"
           to="/"
         >
-          <p class="header__linkText">
-            Main
-          </p>
+          <svgicon
+            class="header__logo"
+            :name="'logo'"
+            :original="true"
+          />
         </nuxt-link>
 
-        <nuxt-link
-          class="header__link"
-          to="/"
-        >
-          <p class="header__linkText">
-            ABOUT GAME
-          </p>
-        </nuxt-link>
+        <div class="header__center">
+          <nuxt-link
+            class="header__link"
+            to="/"
+          >
+            <p class="header__linkText">
+              Main
+            </p>
+          </nuxt-link>
 
-        <nuxt-link
-          class="header__link"
-          to="/"
-        >
-          <p class="header__linkText">
-            Mechanics
-          </p>
-        </nuxt-link>
+          <nuxt-link
+            class="header__link"
+            to="/"
+          >
+            <p class="header__linkText">
+              ABOUT GAME
+            </p>
+          </nuxt-link>
 
-        <nuxt-link
-          class="header__link"
-          to="/"
-        >
-          <p class="header__linkText">
-            Artist’s
-          </p>
-        </nuxt-link>
+          <nuxt-link
+            class="header__link"
+            to="/"
+          >
+            <p class="header__linkText">
+              Mechanics
+            </p>
+          </nuxt-link>
 
-        <nuxt-link
-          class="header__link"
-          to="/"
-        >
-          <p class="header__linkText">
-            Timeline
-          </p>
-        </nuxt-link>
+          <nuxt-link
+            class="header__link"
+            to="/"
+          >
+            <p class="header__linkText">
+              Artist’s
+            </p>
+          </nuxt-link>
 
-        <nuxt-link
-          class="header__link"
-          to="/"
-        >
-          <p class="header__linkText">
-            FAQ
+          <nuxt-link
+            class="header__link"
+            to="/"
+          >
+            <p class="header__linkText">
+              Timeline
+            </p>
+          </nuxt-link>
+
+          <nuxt-link
+            class="header__link"
+            to="/"
+          >
+            <p class="header__linkText">
+              FAQ
+            </p>
+          </nuxt-link>
+        </div>
+        <button class="header__btn">
+          <p class="header__btnText txWhite">
+            Join Vr-Gallery
           </p>
-        </nuxt-link>
+        </button>
       </div>
-      <button class="header__btn">
-        <p class="header__btnText txWhite">
-          Join Vr-Gallery
-        </p>
-      </button>
     </div>
 
     <div
@@ -88,55 +90,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .header {
   &__wrap {
-    max-width: 1920px;
 
-    margin: 0 auto;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 10;
 
-    display: grid;
-    grid-template-columns: 194px auto 209px;
-
-    gap: 114px;
-
-    align-items: center;
-
     backdrop-filter: blur(48px);
-    padding: 0px 120px;
-
     box-shadow: 1px 1px 1px rgb(48, 48, 48);
 
     @supports not (backdrop-filter: blur(48px)) {
       background: rgba(37, 37, 37, 0.76);
     }
+  }
 
-    @media (max-width: $media_xl) {
-      grid-template-columns: 150px auto 150px;
-      gap: 0px 43px;
-
-      padding: 0px 54px;
-    }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
   }
 
   &__center {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
 
-    width: fit-content;
+    max-width: 980px;
+    width: 100%;
   }
 
   &__logoLink {
+    flex-shrink: 0;
+
     display: block;
+
     width: 209px;
+    height: 30px;
 
     @media (max-width: $media_xl) {
       width: 150px;
+      height: 18px;
     }
   }
 
@@ -144,8 +141,9 @@ export default {
     position: relative;
     z-index: 2;
 
-    padding: 38px 40px 28px 40px;
     align-items: center;
+
+    padding: 28px 8px 28px 8px;
 
     text-transform: uppercase;
     transition: 0.6s;
@@ -218,10 +216,6 @@ export default {
 
       opacity: 0;
     }
-
-    @media (max-width: $media_xl) {
-      padding: 28px 8px 28px 8px;
-    }
   }
 
   &__linkText {
@@ -242,23 +236,22 @@ export default {
   }
 
   &__btn {
+    flex-shrink: 0;
+
+    padding: 8px;
+
+    width: 193px;
+    height: 38px;
+
+    border: 1px solid $white;
+    border-radius: 8px;
+
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-size: 14px;
     line-height: 22px;
 
-    align-items: center;
     text-transform: uppercase;
-
-    padding: 8px;
-
-    width: 193px;
-    max-width: 100%;
-
-    height: 38px;
-
-    border: 1px solid $white;
-    border-radius: 8px;
   }
 }
 </style>

@@ -50,7 +50,7 @@
 
       <div
         slot="pagination"
-        class="timelineCards__pagination swiper-pagination"
+        class="timelineCards__pagination"
       />
     </Swiper>
   </div>
@@ -80,19 +80,20 @@ export default {
     return {
       swiperOptions: {
         autoplay: {
-          delay: 5000
+          delay: 3000
         },
         loop: true,
         speed: 700,
+        effect: 'coverflow',
         slidesPerView: 'auto',
         pagination: {
-          el: '.swiper-pagination',
-          bulletClass: 's',
-          bulletActiveClass: 's2',
+          el: '.timelineCards__pagination',
+          bulletClass: 'timelineCards__bullet',
+          bulletActiveClass: 'timelineCards__bullet--active',
           clickable: true,
           dynamicBullets: true,
           renderBullet (index, className) {
-            return `<span class="${className} swiper-pagination-bullet-custom"></span>`
+            return `<button class="${className} swiper-pagination-bullet-custom"></button>`
           }
         }
       }
@@ -106,33 +107,42 @@ export default {
   width: 405px;
 
   &__swiper {
-    background: url('/images/mainTimeline/bg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   &__slide {
-    width: 405px;
+    padding: 3px;
+
+    width: 100%;
     height: 612px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: url('/images/mainTimeline/bg.jpg') no-repeat 50% 50%/cover;
   }
 
   &__img {
     width: 100%;
     height: 403px;
+
+    border-radius: 12px;
   }
 
   &__info{
     position: absolute;
-    bottom: 0;
-
-    padding: 10px 10px 30px;
+    bottom: 3px;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
-    width: 100%;
+    padding: 10px 10px 30px;
+
+    width: calc(100% - 6px);
     height: 309px;
+
+    border-radius: 12px;
 
     background: linear-gradient(0deg, #000000 66.22%, rgba(0, 0, 0, 0) 100%);
   }
@@ -164,12 +174,44 @@ export default {
     max-width: none;
     width: auto;
   }
+}
+</style>
 
+<style lang="scss">
+.timelineCards {
   &__pagination {
     position: absolute;
-    bottom: 200px;
+    z-index: 2;
+    bottom: 200px !important;
 
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    width: 100% !important;
+    height: 22px;
+  }
+
+  &__bullet {
+    flex-shrink: 0;
+
+    width: 14px;
+    height: 14px;
+
+    background: url('~/static/icons/circle.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    filter: grayscale(1);
+
+    transition: 0.3s;
+
+    &--active {
+      filter: grayscale(0);
+      transform: scale(1.6);
+    }
   }
 }
 </style>
