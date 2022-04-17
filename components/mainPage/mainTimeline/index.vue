@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <button class="timeline__btn btn">
+      <!-- <button class="timeline__btn btn">
         <img
           class="btn__icon btn__icon--left"
           src="/icons/ornament.png"
@@ -80,7 +80,7 @@
           src="/icons/ornament.png"
           alt="ornament"
         >
-      </button>
+      </button> -->
     </div>
   </div>
 </template>
@@ -127,38 +127,38 @@ export default {
               link: 'https://www.dropbox.com/s/uff07yccoekd7ax/4%20%28Hoshi%29.jpg?dl=0'
             }
           ]
-        },
-        {
-          artist: 'nikvsio',
-          date: '10.04.2022',
-          avatar: 'https://via.placeholder.com/50x20/2eee1',
-          nftList: [
-            {
-              name: 'KNIGHT OF LIGHT',
-              prcie: '0.09 ETH 1/1',
-              img: 'knightOfLight.jpg',
-              link: '/'
-            },
-            {
-              name: 'KNIGHT OF LIGHT',
-              prcie: '0.09 ETH 1/1',
-              img: 'knightOfLight.jpg',
-              link: '/'
-            },
-            {
-              name: 'KNIGHT OF LIGHT',
-              prcie: '0.09 ETH 1/1',
-              img: 'knightOfLight.jpg',
-              link: '/'
-            },
-            {
-              name: 'Desert Artifact',
-              prcie: '0.05 ETH 1/5',
-              img: 'desertArtifact.jpg',
-              link: '/'
-            }
-          ]
         }
+        // {
+        //   artist: 'nikvsio',
+        //   date: '10.04.2022',
+        //   avatar: 'https://via.placeholder.com/50x20/2eee1',
+        //   nftList: [
+        //     {
+        //       name: 'KNIGHT OF LIGHT',
+        //       prcie: '0.09 ETH 1/1',
+        //       img: 'knightOfLight.jpg',
+        //       link: '/'
+        //     },
+        //     {
+        //       name: 'KNIGHT OF LIGHT',
+        //       prcie: '0.09 ETH 1/1',
+        //       img: 'knightOfLight.jpg',
+        //       link: '/'
+        //     },
+        //     {
+        //       name: 'KNIGHT OF LIGHT',
+        //       prcie: '0.09 ETH 1/1',
+        //       img: 'knightOfLight.jpg',
+        //       link: '/'
+        //     },
+        //     {
+        //       name: 'Desert Artifact',
+        //       prcie: '0.05 ETH 1/5',
+        //       img: 'desertArtifact.jpg',
+        //       link: '/'
+        //     }
+        //   ]
+        // }
       ]
     }
   }

@@ -1,16 +1,27 @@
 <template>
   <div class="mainPage">
-    <BoldPoint />
+    <section
+      id="about"
+      class="mainPage__about"
+    >
+      <BoldPoint />
+    </section>
 
-    <CollaborationMech />
+    <CollaborationMech id="mechanics" />
 
-    <section class="mainPage__artistTeam">
+    <section
+      id="artists"
+      class="mainPage__artistTeam"
+    >
       <div class="container">
         <ArtistTeam />
       </div>
     </section>
 
-    <section class="mainPage__timeline">
+    <section
+      id="timeline"
+      class="mainPage__timeline"
+    >
       <div class="container">
         <MainTimeline />
       </div>
@@ -18,7 +29,7 @@
 
     <GalleryBold />
 
-    <QuestionAnswer />
+    <QuestionAnswer id="faq" />
 
     <BuyToken />
   </div>

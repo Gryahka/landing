@@ -14,59 +14,59 @@
         </nuxt-link>
 
         <div class="header__center">
-          <nuxt-link
+          <a
             class="header__link"
-            to="/"
+            href="#main"
           >
             <p class="header__linkText">
               Main
             </p>
-          </nuxt-link>
+          </a>
 
-          <nuxt-link
+          <a
             class="header__link"
-            to="/"
+            href="#about"
           >
             <p class="header__linkText">
               ABOUT GAME
             </p>
-          </nuxt-link>
+          </a>
 
-          <nuxt-link
+          <a
             class="header__link"
-            to="/"
+            href="#mechanics"
           >
             <p class="header__linkText">
               Mechanics
             </p>
-          </nuxt-link>
+          </a>
 
-          <nuxt-link
+          <a
             class="header__link"
-            to="/"
+            href="#artists"
           >
             <p class="header__linkText">
               Artist’s
             </p>
-          </nuxt-link>
+          </a>
 
-          <nuxt-link
+          <a
             class="header__link"
-            to="/"
+            href="#timeline"
           >
             <p class="header__linkText">
               Timeline
             </p>
-          </nuxt-link>
+          </a>
 
-          <nuxt-link
+          <a
             class="header__link"
-            to="/"
+            href="#faq"
           >
             <p class="header__linkText">
               FAQ
             </p>
-          </nuxt-link>
+          </a>
         </div>
         <button class="header__btn">
           <p class="header__btnText txWhite">
@@ -252,6 +252,10 @@ export default {
     line-height: 22px;
 
     text-transform: uppercase;
+  }
+
+  &__fake {
+    height: 60px;
   }
 }
 </style>
