@@ -1,8 +1,8 @@
-$media-xs: 330px;
-$media-sm: 576px;
-$media-md: 768px;
-$media-lg: 992px;
-$media-xl: 1130px;
+$media_xs: 330px;
+$media_sm: 576px;
+$media_md: 768px;
+$media_lg: 992px;
+$media_xl: 1130px;
 
 // @NOTE Лучше использовать CSS переменные, а не переменные SCSS (SASS). CSS переменные дают больше возможностей. Напримре, изменять их значение в реальном времени через JS. С SCSS переменными такое не получится.
 /* @NOTE 
