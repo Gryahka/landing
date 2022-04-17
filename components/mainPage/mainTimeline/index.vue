@@ -99,20 +99,32 @@ export default {
       timelineList: [
         {
           artist: 'hoshi',
-          date: '07.04.2022',
-          avatar: 'https://via.placeholder.com/150x600/222f1',
+          date: '18.04.2022',
+          avatar: '/images/avatars/hoshi.png',
           nftList: [
+            {
+              name: 'Forest Artifact',
+              prcie: '0.09 ETH 1/1',
+              img: 'forestArtifact.jpg',
+              link: 'https://www.dropbox.com/s/q3vd4wxaclhnz85/1%20%28Hoshi%29.jpg?dl=0'
+            },
             {
               name: 'Mountain artifact',
               prcie: '0.07 ETH 1/3',
               img: 'mountainArtifact.jpg',
-              link: '/'
+              link: 'https://www.dropbox.com/s/rqazdzgmsi2upfl/2%20%28Hoshi%29.jpg?dl=0'
             },
             {
               name: 'Desert Artifact',
               prcie: '0.05 ETH 1/5',
               img: 'desertArtifact.jpg',
-              link: '/'
+              link: 'https://www.dropbox.com/s/3gvnn5vxdclcuif/3%20%28Hoshi%29.jpg?dl=0'
+            },
+            {
+              name: 'Steppe Artifact',
+              prcie: '0.03 ETH 1/7',
+              img: 'steppeArtifact.jpg',
+              link: 'https://www.dropbox.com/s/uff07yccoekd7ax/4%20%28Hoshi%29.jpg?dl=0'
             }
           ]
         },

@@ -93,9 +93,15 @@ export default {
     background-image: url("/images/lilacDotBg.png");
     background-repeat: no-repeat;
     background-position-x: center;
+
     &__inner {
         padding-top: 97px;
         padding-bottom: 220px;
+
+        @media (max-width: $media_xl) {
+          padding-top: 55px;
+          padding-bottom: 110px;
+        }
     }
 
     &__title {
@@ -112,12 +118,22 @@ export default {
 
         text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
 
-        margin-bottom: 20px;
+        margin: 0 auto;
+
+        @media (max-width: $media_xl) {
+          font-size: 50px;
+        }
     }
 
     &__list {
         display: grid;
         gap: 20px;
+
+        margin-top: 90px;
+
+        @media (max-width: $media_xl) {
+          margin-top: 45px;
+        }
     }
 
     &__accordion {
@@ -133,21 +149,28 @@ export default {
     &__accordionCross {
         width: 47px;
         height: 47px;
+
+        @media (max-width: $media_xl) {
+          width: 23px;
+          height: 23px;
+        }
     }
 
     &__accordionHead {
         font-family: "Cinzel";
-        font-style: normal;
         font-weight: 400;
         font-size: 26px;
         line-height: 35px;
 
         color: $gold;
+
+        @media (max-width: $media_xl) {
+          font-size: 20px;
+        }
     }
 
     &__accordionBody {
         font-family: "Inter";
-        font-style: normal;
         font-weight: 400;
         font-size: 15px;
         line-height: 22px;
@@ -155,6 +178,10 @@ export default {
         opacity: 0.7;
 
         padding-right: 68px;
+
+        @media (max-width: $media_xl) {
+          font-size: 14px;
+        }
     }
 }
 
