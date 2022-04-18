@@ -1,12 +1,12 @@
 <template>
   <div class="bold">
     <div class="bold__top">
-      <h1 class="bold__title border border--line">
+      <h1 class="bold__title title_1 border border--line">
         Bold Point is
       </h1>
 
       <div class="bold__textRow">
-        <p class="bold__text">
+        <p class="bold__text text">
           Bold Point is your portal to a parallel universe
         </p>
       </div>
@@ -83,7 +83,7 @@ export default {
 
 <style lang="scss" scoped>
 .bold {
-  margin: 0 auto;
+  margin: 150px auto 0 auto;
   padding: 80px 16px;
 
   max-width: 1920px;
@@ -92,18 +92,16 @@ export default {
 
   &__title {
     margin: 0 auto 32px;
-    padding: 0 100px 16px;
+    padding: 0 100px 20px;
 
     width: fit-content;
 
-    font-family: "Cinzel";
-    font-size: 72px;
-    line-height: 72px;
-
-    color: $lilac;
-
     text-align: center;
-    letter-spacing: -0.02em;
+
+    @media (max-width: $media_xl) {
+      margin: 0 auto 16px;
+      padding: 0 50px 10px;
+    }
   }
 
   &__textRow {
@@ -129,32 +127,42 @@ export default {
       height: 35px;
 
       background: url('/icons/ornamentSmall.png') no-repeat center center/contain;
+
+      @media (max-width: $media_xl) {
+      width: 26px;
+      height: 26px;
+
+      top: -4px;
+    }
     }
 
     &::after {
       right: -55px;
 
       transform: rotate(90deg);
+
+      @media (max-width: $media_xl) {
+      right: -38px;
+    }
     }
 
     &::before {
       left: -55px;
 
       transform: rotate(-90deg);
+
+      @media (max-width: $media_xl) {
+      left: -38px;
+    }
+    }
+
+    @media (max-width: $media_xl) {
+      margin-bottom: 45px;
     }
   }
 
   &__text {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-
-    color: $white;
-
     text-align: center;
-    opacity: 0.7;
   }
 }
 </style>

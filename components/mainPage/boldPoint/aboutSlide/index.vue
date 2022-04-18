@@ -1,11 +1,11 @@
 <template>
   <div class="aboutSlide">
     <div class="aboutSlide__left">
-      <h2 class="aboutSlide__title">
+      <h2 class="aboutSlide__title subtitleCin">
         {{ slideData.title }}
       </h2>
 
-      <p class="aboutSlide__text">
+      <p class="aboutSlide__text text_inter_18">
         {{ slideData.text }}
       </p>
     </div>
@@ -55,16 +55,9 @@ export default {
   &__title {
     margin-bottom: 20px;
 
-    font-family: 'Cinzel';
-    font-size: 42px;
-    line-height: 48px;
-    color: var(--title_tertiary);
-  }
-
-  &__text {
-    font-size: 18px;
-    line-height: 28px;
-    color: var(--tx_tertiary);
+    @media (max-width: $media_xl) {
+      margin-bottom: 10px;
+    }
   }
 
   &__right {

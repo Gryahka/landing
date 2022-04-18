@@ -13,7 +13,7 @@
                 11 Artist’s
               </h2>
 
-              <p class="collab__descrText">
+              <p class="collab__descrText text_inter_16">
                 11 artists with different views united <br>
                 in one project
               </p>
@@ -25,7 +25,7 @@
               39 art works
             </h2>
 
-            <p class="collab__descrText">
+            <p class="collab__descrText text_inter_16">
               39 works of art with different <br>
               circulation
             </p>
@@ -36,7 +36,7 @@
               every 3 days
             </h2>
 
-            <p class="collab__descrText">
+            <p class="collab__descrText text_inter_16">
               An artist will be presented once <br>
               every 3 days
             </p>
@@ -46,12 +46,12 @@
 
       <div class="collab__bottom">
         <div class="collab__main">
-          <h2 class="collab__bottomTitle">
+          <h2 class="collab__bottomTitle subtitle_cin_56">
             Collect digital art and earn <br>
             additional prizes
           </h2>
 
-          <p class="collab__text">
+          <p class="collab__text text_inter_20">
             We invite you to take part in our cooperation as an art collector.
             <br>
             Anyone who acquires a piece of art crafted by an artist before the
@@ -88,7 +88,7 @@
           </div>
         </div>
 
-        <nuxt-link class="collab__link btn" to="/">
+        <a class="collab__link btn" href="https://opensea.io/collection/boldpoint">
           <img
             class="collab__btnIcon btn__icon btn__icon--left"
             src="/icons/ornament.png"
@@ -104,7 +104,7 @@
             src="/icons/ornament.png"
             alt="ornament"
           >
-        </nuxt-link>
+        </a>
 
         <div class="collab__LineRow">
           <svgicon
@@ -137,7 +137,7 @@ export default {
   margin: 0 auto;
 
   &__inner {
-    margin: 202px 150px 196px 150px;
+    margin: 202px 150px 196px 96px;
 
     @media (max-width: $media_xl) {
       margin: 110px 54px 110px 54px;
@@ -158,6 +158,7 @@ export default {
 
     @media (max-width: $media_xl) {
       font-size: 50px;
+      line-height: 58px;
     }
   }
 
@@ -176,6 +177,7 @@ export default {
 
   &__descrBox {
     width: 100%;
+    min-width: 330px;
     height: 100%;
 
     padding: 29px 0 29px 0;
@@ -217,17 +219,7 @@ export default {
   }
 
   &__descrText {
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
     text-align: center;
-    opacity: 0.7;
-
-    @media (max-width: $media_xl) {
-      font-size: 14px;
-    }
   }
 
   &__bottom {
@@ -246,52 +238,33 @@ export default {
   }
 
   &__main {
-    padding-top: 120px;
-    padding-bottom: 151px;
+    padding-top: 100px;
+    padding-bottom: 88px;
 
     @media (max-width: $media_xl) {
-      padding-top: 80px;
-      padding-bottom: 120px;
+      padding-top: 50px;
+      padding-bottom: 40px;
     }
   }
 
   &__bottomTitle {
-    font-family: "Cinzel";
-    font-weight: 400;
-    font-size: 56px;
-    line-height: 56px;
-
     color: $gold;
 
     text-align: center;
-    letter-spacing: -0.02em;
 
     margin-bottom: 44px;
 
     @media (max-width: $media_xl) {
-      font-size: 46px;
-
       margin-bottom: 17px;
     }
   }
 
   &__text {
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-
-    color: $white;
-
     text-align: center;
 
-    opacity: 0.7;
-
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 
     @media (max-width: $media_xl) {
-      font-size: 16px;
-
       margin-bottom: 25px;
     }
   }
