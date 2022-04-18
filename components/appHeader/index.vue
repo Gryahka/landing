@@ -6,11 +6,11 @@
           class="header__logoLink"
           to="/"
         >
-          <svgicon
+          <img
             class="header__logo"
-            :name="'logo'"
-            :original="true"
-          />
+            src="/icons/logo.svg"
+            alt="logo"
+          >
         </nuxt-link>
 
         <div class="header__center">
@@ -68,11 +68,14 @@
             </p>
           </a>
         </div>
-        <button class="header__btn">
+        <a
+          class="header__btn"
+          href="https://spatial.io/"
+        >
           <p class="header__btnText txWhite">
             Join Vr-Gallery
           </p>
-        </button>
+        </a>
       </div>
     </div>
 
@@ -92,7 +95,6 @@ export default {
 <style lang="scss" scoped>
 .header {
   &__wrap {
-
     position: fixed;
     top: 0;
     right: 0;
@@ -128,8 +130,8 @@ export default {
 
     display: block;
 
-    width: 209px;
-    height: 30px;
+    width: 194px;
+    height: 23px;
 
     @media (max-width: $media_xl) {
       width: 150px;
@@ -153,13 +155,6 @@ export default {
     &:hover {
       color: $gold;
 
-      // background: linear-gradient(
-      //   180deg,
-      //   rgba(255, 255, 255, 0) 0%,
-      //   rgba(255, 255, 255, 0.24) 100%
-      // );
-      // backdrop-filter: blur(18px);
-
       &::after,
       &::before {
         opacity: 1;
@@ -178,7 +173,7 @@ export default {
       position: absolute;
 
       left: 0px;
-      top: 86px;
+      top: 78px;
 
       width: 100%;
       height: 3px;
@@ -194,6 +189,7 @@ export default {
 
       opacity: 0;
       transition: 0.3s;
+
     }
 
     &::before {
@@ -228,8 +224,12 @@ export default {
       bottom: 0;
       left: 0;
 
-      background: rgba(255, 255, 255, 0.561);
-      backdrop-filter: blur(10px);
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.24) 100%
+      );
+      backdrop-filter: blur(18px);
 
       opacity: 0;
     }
@@ -252,6 +252,12 @@ export default {
     line-height: 22px;
 
     text-transform: uppercase;
+
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 2px 6px 20px 0px rgb(255 255 255 / 83%);
+    }
   }
 
   &__fake {

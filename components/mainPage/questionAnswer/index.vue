@@ -1,7 +1,7 @@
 <template>
   <div class="question">
     <div class="question__inner">
-      <h1 class="question__title border border--line">
+      <h1 class="question__title title_1 border border--line">
         F.A.Q
       </h1>
 
@@ -94,35 +94,52 @@ export default {
     background-repeat: no-repeat;
     background-position-x: center;
 
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      bottom: 414px;
+      right: -212px;
+
+      width: 370px;
+      height: 224px;
+      border-radius: 50%;
+      filter: blur(335px);
+
+      background: rgba(193, 255, 61, 0.48);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      bottom: 50px;
+      left: -154px;
+
+      width: 278px;
+      height: 258px;
+      border-radius: 50%;
+      filter: blur(335px);
+
+      background: rgb(166, 61, 255);
+    }
+
     &__inner {
-        padding-top: 97px;
         padding-bottom: 220px;
 
         @media (max-width: $media_xl) {
-          padding-top: 55px;
           padding-bottom: 110px;
         }
     }
 
     &__title {
-        font-family: "Cinzel";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 72px;
-        line-height: 72px;
+      text-align: center;
 
-        color: $lilac;
-
-        text-align: center;
-        letter-spacing: -0.02em;
-
-        text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
-
-        margin: 0 auto;
-
-        @media (max-width: $media_xl) {
-          font-size: 50px;
-        }
+      margin: 0 auto;
     }
 
     &__list {

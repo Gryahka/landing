@@ -1,7 +1,7 @@
 <template>
   <div class="gallery">
     <div class="gallery__inner">
-      <h1 class="gallery__title txLilac">
+      <h1 class="gallery__title title_1 txLilac">
         Welcome to the Bold Point Gallery!
       </h1>
 
@@ -12,7 +12,7 @@
           alt="ornament"
         >
 
-        <p class="gallery__text">
+        <p class="gallery__text text_inter_20">
           You can visit our exhibition in virtual reality at any time <br>
           Join our exposition and buy paintings
         </p>
@@ -24,12 +24,12 @@
         >
       </div>
 
-      <p class="gallery__textGold txGold">
+      <p class="gallery__textGold text_cin_24 txGold">
         Now it's your turn to enter a new virtual<br> environment and find your
         destiny!
       </p>
 
-      <nuxt-link class="gallery__link btn" to="/">
+      <a class="gallery__link btn" href="https://spatial.io/">
         <img
           class="gallery__btnIcon btn__icon btn__icon--left"
           src="/icons/ornament.png"
@@ -45,7 +45,7 @@
           src="/icons/ornament.png"
           alt="ornament"
         >
-      </nuxt-link>
+      </a>
     </div>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
 
   &__inner {
     padding-top: 120px;
-    padding-bottom: 160px;
+    padding-bottom: 230px;
 
     @media (max-width: $media_xl) {
       padding-bottom: 223px;
@@ -73,21 +73,11 @@ export default {
   }
 
   &__title {
-    font-family: "Cinzel";
-    font-weight: 400;
-    font-size: 72px;
-    line-height: 72px;
-
     text-align: center;
-    letter-spacing: -0.02em;
-
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
 
     margin-bottom: 44px;
 
     @media (max-width: $media_xl) {
-      font-size: 50px;
-
       margin-bottom: 25px;
     }
   }
@@ -116,34 +106,18 @@ export default {
   }
 
   &__text {
-    font-family: "Inter";
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 28px;
-
     text-align: center;
 
-    @media (max-width: $media_xl) {
-      font-size: 16px;
-    }
+    color: $white;
   }
 
   &__textGold {
-    font-family: "Cinzel";
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 28px;
-
     text-align: center;
-    letter-spacing: 0.04em;
 
     margin-bottom: 48px;
 
     @media (max-width: $media_xl) {
-      font-size: 18px;
-
-    margin-bottom: 28px;
-
+      margin-bottom: 28px;
     }
   }
 }

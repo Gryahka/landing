@@ -20,24 +20,10 @@
       <div class="banner__center">
         <h1
           id="main"
-          class="banner__centerTitle txGold"
+          class="banner__centerTitle title_1 txGold border border--line"
         >
           Bold Point — Art Project
         </h1>
-
-        <div class="banner__centerLineRow">
-          <svgicon
-            class="banner__centerLine banner__centerLine--left"
-            :name="'halfLineLilac'"
-            :original="true"
-          />
-
-          <svgicon
-            class="banner__centerLine banner__centerLine--right"
-            :name="'halfLineLilac'"
-            :original="true"
-          />
-        </div>
 
         <p class="banner__centerText">
           11 digital artists were inspired by Bold Point and are showcasing
@@ -48,7 +34,7 @@
 
         <nuxt-link
           class="banner__centerLink btn"
-          to="/"
+          to="https://opensea.io/collection/boldpoint"
         >
           <img
             class="banner__cenerBtnIcon btn__icon btn__icon--left"
@@ -70,11 +56,11 @@
     </div>
 
     <div class="banner__scroll">
-      <svgicon
+      <img
         class="banner__iconScroll"
-        :name="'scrollDown'"
-        :original="true"
-      />
+        src="/icons/scrollDown.svg"
+        alt="scroll"
+      >
 
       <p class="banner__scrollText">
         Learn more
@@ -99,7 +85,7 @@ export default {
   max-width: 1920px;
 
   margin: 0 auto;
-  padding-bottom: 110px;
+  padding-bottom: 112px;
 
   background-image: linear-gradient(
       90.39deg,
@@ -113,7 +99,11 @@ export default {
   position: relative;
 
   &__inner {
-    padding: 31px 120px;
+    padding: 62px 100px 1px 100px;
+
+    @media (max-width: $media_xl) {
+      padding: 31px 15px;
+    }
   }
 
   &__top {
@@ -151,42 +141,17 @@ export default {
     margin-bottom: 290px;
 
     width: 932px;
+
+    @media (max-width: $media_xl) {
+      margin-top: 238px;
+    }
   }
 
   &__centerTitle {
-    font-family: "Cinzel";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 72px;
-    line-height: 72px;
-
     text-align: center;
-    letter-spacing: -0.02em;
+    color: $gold;
 
-    text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
-
-    margin-bottom: 15px;
-  }
-
-  &__centerLineRow {
-    display: flex;
-
-    margin-bottom: 40px;
-  }
-
-  &__centerLine {
-    position: absolute;
-
-    width: 466px;
-
-    &--left {
-      transform: rotate(180deg);
-      left: 123px;
-    }
-
-    &--right {
-      left: 587px;
-    }
+    margin-bottom: 20px;
   }
 
   &__centerText {
@@ -208,7 +173,7 @@ export default {
     display: flex;
     justify-content: center;
 
-    margin: 0 auto;
+    margin: 0 auto -113px;
     width: 77px;
     z-index: 10;
   }
@@ -231,15 +196,19 @@ export default {
     font-size: 24px;
     line-height: 32px;
 
-    color: #d9d9d9;
+    color: rgb(217, 217, 217);
 
     text-align: center;
   }
 
   &__icon {
     position: absolute;
-    top: 1032px;
+    top: 1017px;
     left: -45px;
   }
+}
+
+.border {
+  width: 100%;
 }
 </style>

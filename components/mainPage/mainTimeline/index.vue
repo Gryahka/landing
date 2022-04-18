@@ -5,7 +5,7 @@
         Timeline
       </h1>
 
-      <div class="mainTimeline__topTx">
+      <div class="mainTimeline__topTx text_inter_24">
         <p class="mainTimeline__tx">
           Each artist makes from 2 to 5 works in different editions
         </p>
@@ -174,9 +174,6 @@ export default {
 
   box-shadow: inset 0px 0px 20px 11px var(--bg_main);
 
-  &__top {
-  }
-
   &__title {
     margin: 0 auto 48px;
     padding: 0 100px 20px;
@@ -220,11 +217,7 @@ export default {
   }
 
   &__tx {
-    font-size: 24px;
-    line-height: 32px;
     text-align: center;
-    letter-spacing: 0.04em;
-    color: var(--tx_secondary);
   }
 
   &__timeline {
@@ -291,9 +284,6 @@ export default {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-  }
-
-  &__avatar {
   }
 
   &__line{
