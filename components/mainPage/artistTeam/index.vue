@@ -5,21 +5,9 @@
     </h1>
 
     <div class="artist__textRow">
-      <img
-        class="artist__ornament artist__ornament--left"
-        src="/icons/ornamentSmall.png"
-        alt="ornament"
-      >
-
       <p class="artist__text">
         Art and its creators have always been an integral part of our lives, and the artist Point universe is no exception Artists have always expressed relevant and modern ideas that have consistently forced our world to change
       </p>
-
-      <img
-        class="artist__ornament artist__ornament--right"
-        src="/icons/ornamentSmall.png"
-        alt="ornament"
-      >
     </div>
 
     <div class="artist__inner">
@@ -50,6 +38,11 @@ export default {
 @import "~/assets/scss/styles/variables.scss";
 .artist {
   &__title {
+    margin: 0 auto 48px;
+    padding: 0 100px 20px;
+
+    width: fit-content;
+
     font-family: "Cinzel";
     font-style: normal;
     font-weight: 400;
@@ -62,69 +55,75 @@ export default {
     letter-spacing: -0.02em;
 
     text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.9);
-    margin: 0 auto;
   }
 
   &__textRow {
-      display: flex;
-    justify-content: center;
     position: relative;
 
-      margin-top: 47px;
-    margin-bottom: 76px;
-  }
+    display: flex;
+    justify-content: center;
 
-  &__ornament {
-    position: absolute;
+    margin: 0 auto 80px;
+    padding: 0 44px;
 
-    width: 24px;
-    height: 35px;
+    max-width: 1400px;
 
-    &--left {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: block;
+
+      width: 35px;
+      height: 35px;
+
+      background: url('/icons/ornamentSmall.png') no-repeat center;
+
       transform: rotate(-90deg);
-      left: 141px;
     }
 
-    &--right {
+    &::after {
+      left: auto;
+      right: 0;
+
       transform: rotate(90deg);
-      left: 1567px;
     }
   }
 
   &__text {
+    max-width: 1366px;
+
     font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
 
-color: $white;
+    color: $white;
 
-text-align: center;
-letter-spacing: 0.04em;
+    text-align: center;
+    letter-spacing: 0.04em;
 
-opacity: 0.7;
-
-max-width: 1366px;
+    opacity: 0.7;
   }
 
   &__innerText {
+    margin-bottom: 115px;
+
     font-family: 'Cinzel';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 32px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 32px;
 
-color: $gold;
+    color: $gold;
 
-text-align: center;
-letter-spacing: 0.04em;
+    text-align: center;
+    letter-spacing: 0.04em;
 
-margin-bottom: 115px;
   }
-}
-
-.border {
-    width: 520px;
 }
 </style>
